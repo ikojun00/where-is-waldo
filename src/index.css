@@ -1,27 +1,22 @@
-body {
-  display: flex;
-  justify-content: center;
+img {
+  width: 100vw;
 }
 
-.grid-container {
-  display: grid;
-  grid-template-rows: repeat(117, 30px);
-  grid-template-columns: repeat(54, 30px);
-  background-image: url(./images/ps2Image.jpg);
-  width: 1620px;
-  height: 3510px;
-  background-size: cover;
-  background-position: center;
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
-.grid-item {
-  cursor: pointer;
-}
-
-.grid-item-selected{
-  border: solid;
+.dropdown-menu {
+  padding: 1rem;
+  position: absolute;
+  background-color: #f9f9f9;
+  border-radius: 4px;
 }
 
 .options {
-  padding: 0 30px;
+  cursor: pointer;
+  padding: 4px 8px;
+  color: #333;
 }

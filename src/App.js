@@ -1,9 +1,9 @@
-import GridContainer from "./GridContainer";
+import Game from "./Game";
 
 function App() {
   return (
     <div className="App">
-    <GridContainer />
+    <Game />
     </div>
   );
 }
