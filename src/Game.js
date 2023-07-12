@@ -1,29 +1,23 @@
 import React, { useState, useRef, useEffect } from 'react';
 import image from './images/ps2Image.jpg';
 import { db } from './firebase';
-import { doc, getDoc } from 'firebase/firestore';
+import { collection, getDocs } from "firebase/firestore";
 
 const Game = () => {
   const [showDropdown, setShowDropdown] = useState(false);
-  const [selectedOption, setSelectedOption] = useState(null);
   const [dropdownPosition, setDropdownPosition] = useState({ x: 0, y: 0 });
+  const [firestoreData, setFirestoreData] = useState([]);
   const imageRef = useRef(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const docRef = doc(db, 'your_collection', 'your_document');
-        const docSnap = await getDoc(docRef);
-
-        if (docSnap.exists()) {
-          const data = docSnap.data();
-          console.log('Document data:', data);
-          // Handle the retrieved data as needed
-        } else {
-          console.log('No such document!');
-        }
+        const querySnapshot = await getDocs(collection(db, "characters"));
+        const data = querySnapshot.docs.map(doc => doc.data());
+        setFirestoreData(data);
+        console.log('Fetched data:', data);
       } catch (error) {
-        console.log('Error getting document:', error);
+        console.log('Error getting documents:', error);
       }
     };
 
@@ -40,8 +34,25 @@ const Game = () => {
   };
 
   const handleOptionSelect = (option) => {
-    setSelectedOption(option);
     setShowDropdown(false);
+    handleResult(option);
+  };
+
+  const handleResult = (option) => {
+    console.log(firestoreData);
+    const foundCharacter = firestoreData.find(character =>
+      character.name === option &&
+      character.lowest_x < dropdownPosition.x &&
+      character.lowest_y < dropdownPosition.y &&
+      character.highest_x > dropdownPosition.x &&
+      character.highest_y > dropdownPosition.y
+    );
+    
+    if (foundCharacter) {
+      console.log('Found:', foundCharacter);
+    } else {
+      console.log('Not found');
+    }
   };
 
   return (
