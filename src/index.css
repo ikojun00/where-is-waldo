@@ -1,11 +1,23 @@
+body {
+  display: flex;
+  justify-content: center;
+}
+
 img {
-  width: 1800px;
+  width: 100vw;
 }
 
 ul {
   list-style: none;
   margin: 0;
   padding: 0;
+}
+
+.timer {
+  font-size: 2rem;
+  padding: 1rem;
+  margin: 1rem;
+  border: solid;
 }
 
 .dropdown-menu {
