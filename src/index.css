@@ -100,7 +100,7 @@ ul {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 8rem;
+  gap: 10vw;
 }
 
 .homePageImages > .homePageChar > img {
@@ -145,4 +145,25 @@ ul {
   text-align: left;
   background-color: #04AA6D;
   color: white;
+}
+
+@media only screen and (max-width: 768px) {
+  .homePageImages > .homePageChar > img {
+    height: 20vh;
+  }
+  
+  .header > .headerChar {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .header > .headerChar > img {
+    height: 8vh;
+    width: 8vh;
+  }
+
+  .timer {
+    font-size: 1.5rem;
+  }
 }
