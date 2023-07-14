@@ -1,18 +1,46 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Navigate } from 'react-router-dom';
 import Timer from './Timer';
 import image from './images/ps2Image.jpg';
 import Jak from './images/jakHeader.png';
 import Kratos from './images/kratosHeader.png';
 import Ratchet from './images/ratchetHeader.png';
 import { db } from './firebase';
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, addDoc } from "firebase/firestore";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Game = () => {
   const [showDropdown, setShowDropdown] = useState(false);
-  const [originalDropdownPosition, setOriginalDropdownPosition] = useState({ x: 0, y: 0 });
-  const [currentDropdownPosition, setCurrentDropdownPosition] = useState({ x: 0, y: 0 });
+  const [originalDropdownPosition, setOriginalDropdownPosition] = useState({ x: -1, y: -1 });
+  const [currentDropdownPosition, setCurrentDropdownPosition] = useState({ x: -1, y: -1 });
   const [firestoreData, setFirestoreData] = useState([]);
   const imageRef = useRef(null);
+  const [shouldRender, setShouldRender] = useState(false);
+
+  useEffect(() => {
+    const addData = async () => {
+      try {
+        if (firestoreData.length === 0 && originalDropdownPosition.x !== -1) {
+          const timerElement = document.querySelector(".timer").textContent;
+          const player = prompt(`Your time is ${timerElement}. Your name is: `)
+
+          if (timerElement) {
+            await addDoc(collection(db, "leaderboard"), {
+              name: player,
+              time: timerElement
+            });
+          }
+          setTimeout(() => {
+            setShouldRender(true);
+          }, 1000);
+        }
+      } catch (error) {
+        console.log('Error adding document:', error);
+      }
+    };
+    addData();
+  }, [firestoreData.length, originalDropdownPosition.x]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -33,19 +61,19 @@ const Game = () => {
     const imageBounds = imageRef.current.getBoundingClientRect();
     const originalWidth = imageRef.current.naturalWidth;
     const originalHeight = imageRef.current.naturalHeight;
-  
+
     // Calculate the current dimensions of the image
     const currentWidth = imageBounds.width;
     const currentHeight = imageBounds.height;
-  
+
     // Calculate the ratio of the original dimensions to the current dimensions
     const widthRatio = originalWidth / currentWidth;
     const heightRatio = originalHeight / currentHeight;
-  
+
     // Calculate the responsive offsetX and offsetY values
     const offsetX = Math.floor((event.nativeEvent.offsetX) * widthRatio);
     const offsetY = Math.floor((event.nativeEvent.offsetY) * heightRatio);
-  
+
     setShowDropdown(!showDropdown);
     setOriginalDropdownPosition({ x: offsetX, y: offsetY });
     setCurrentDropdownPosition({ x: event.nativeEvent.offsetX, y: event.nativeEvent.offsetY });
@@ -65,24 +93,26 @@ const Game = () => {
       character.highest_x > originalDropdownPosition.x &&
       character.highest_y > originalDropdownPosition.y
     );
-    
+
     if (foundCharacter) {
       const updatedFirestoreData = firestoreData.filter(
         (character) => character.name !== option
       );
-      console.log(updatedFirestoreData)
-      if(updatedFirestoreData.length === 0) 
-        prompt(`Congrats! Your time is ${document.querySelector(".timer").textContent}. Enter your name to add you to a leaderboard`);
+
+      // npm notifications
+      toast.success(`You found ${option}!`);
+
       setFirestoreData(updatedFirestoreData);
+
     } else {
-      alert(`That is not ${option}`);
+      toast.error(`That is not ${option}!`);
     }
   };
 
   return (
     <div>
       <div className="header">
-        <Timer/>
+        <Timer />
         <div className='headerChar'>
           <img src={Jak} alt="Jak" />
           <p>Jak</p>
@@ -108,6 +138,11 @@ const Game = () => {
           </ul>
         </div>
       )}
+      {shouldRender && (
+        <Navigate to={"/leaderboard"} />
+      )}
+
+      <ToastContainer />
     </div>
   );
 };
