@@ -107,7 +107,6 @@ ul {
   height: 20vw;
   width: auto;
   display: flex;
-  flex-direction: column;
 }
 
 .homePageChar {

@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import Timer from './Timer';
+import PreloadImage from './PreloadImage';
 import image from './images/ps2Image.webp';
 import Jak from './images/jakHeader.webp';
 import Kratos from './images/kratosHeader.webp';
@@ -114,15 +115,15 @@ const Game = () => {
       <div className="header">
         <Timer />
         <div className='headerChar'>
-          <img src={Jak} alt="Jak" />
+          <PreloadImage src={Jak} alt="Jak" />
           <p>Jak</p>
         </div>
         <div className='headerChar'>
-          <img src={Kratos} alt="Kratos" />
+          <PreloadImage src={Kratos} alt="Kratos" />
           <p>Kratos</p>
         </div>
         <div className='headerChar'>
-          <img src={Ratchet} alt="Ratchet" />
+          <PreloadImage src={Ratchet} alt="Ratchet" />
           <p>Ratchet</p>
         </div>
       </div>
