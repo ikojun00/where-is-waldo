@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/where-is-waldo/static/css/main.1d627415.css",
-    "main.js": "/where-is-waldo/static/js/main.c9639490.js",
-    "static/media/ps2Image.webp": "/where-is-waldo/static/media/ps2Image.f4119db4a8e8e64a2321.webp",
+    "main.js": "/where-is-waldo/static/js/main.4a4ecdc3.js",
+    "static/media/ps2Image.webp": "/where-is-waldo/static/media/ps2Image.3952170480e9b015c524.webp",
     "static/media/kratos.webp": "/where-is-waldo/static/media/kratos.0c41c64375d3865dc665.webp",
     "static/media/jak.webp": "/where-is-waldo/static/media/jak.1a7c46e5ae7da4cf5954.webp",
     "static/media/ratchet.webp": "/where-is-waldo/static/media/ratchet.4eedeed47acaba2698cc.webp",
@@ -11,10 +11,10 @@
     "static/media/kratosHeader.webp": "/where-is-waldo/static/media/kratosHeader.665a782a4da47583bfae.webp",
     "index.html": "/where-is-waldo/index.html",
     "main.1d627415.css.map": "/where-is-waldo/static/css/main.1d627415.css.map",
-    "main.c9639490.js.map": "/where-is-waldo/static/js/main.c9639490.js.map"
+    "main.4a4ecdc3.js.map": "/where-is-waldo/static/js/main.4a4ecdc3.js.map"
   },
   "entrypoints": [
     "static/css/main.1d627415.css",
-    "static/js/main.c9639490.js"
+    "static/js/main.4a4ecdc3.js"
   ]
 }
