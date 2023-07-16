@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Jak from './images/jak.png';
-import Kratos from './images/kratos.png';
-import Ratchet from './images/ratchet.png';
+import Jak from './images/jak.webp';
+import Kratos from './images/kratos.webp';
+import Ratchet from './images/ratchet.webp';
 
 const HomePage = () => {
   return (
