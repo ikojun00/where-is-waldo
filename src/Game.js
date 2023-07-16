@@ -1,10 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import Timer from './Timer';
-import image from './images/ps2Image.jpg';
-import Jak from './images/jakHeader.png';
-import Kratos from './images/kratosHeader.png';
-import Ratchet from './images/ratchetHeader.png';
+import image from './images/ps2Image.webp';
+import Jak from './images/jakHeader.webp';
+import Kratos from './images/kratosHeader.webp';
+import Ratchet from './images/ratchetHeader.webp';
 import { db } from './firebase';
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import { ToastContainer, toast } from 'react-toastify';
