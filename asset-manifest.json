@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/where-is-waldo/static/css/main.a5e2d4b5.css",
-    "main.js": "/where-is-waldo/static/js/main.bc49a7a1.js",
-    "static/media/ps2Image.webp": "/where-is-waldo/static/media/ps2Image.7c24618ab28ab348b0e9.webp",
-    "static/media/kratos.webp": "/where-is-waldo/static/media/kratos.f95171325f0ffd4a205e.webp",
-    "static/media/jak.webp": "/where-is-waldo/static/media/jak.d11e9f533c61ef24f9b1.webp",
-    "static/media/ratchet.webp": "/where-is-waldo/static/media/ratchet.18117c41724d0bb532e4.webp",
-    "static/media/jakHeader.webp": "/where-is-waldo/static/media/jakHeader.27a93a133677115b88dc.webp",
-    "static/media/ratchetHeader.webp": "/where-is-waldo/static/media/ratchetHeader.6c6b71615cff70baec56.webp",
-    "static/media/kratosHeader.webp": "/where-is-waldo/static/media/kratosHeader.cca6755e3ab567e89340.webp",
+    "main.css": "/where-is-waldo/static/css/main.1d627415.css",
+    "main.js": "/where-is-waldo/static/js/main.c9639490.js",
+    "static/media/ps2Image.webp": "/where-is-waldo/static/media/ps2Image.f4119db4a8e8e64a2321.webp",
+    "static/media/kratos.webp": "/where-is-waldo/static/media/kratos.0c41c64375d3865dc665.webp",
+    "static/media/jak.webp": "/where-is-waldo/static/media/jak.1a7c46e5ae7da4cf5954.webp",
+    "static/media/ratchet.webp": "/where-is-waldo/static/media/ratchet.4eedeed47acaba2698cc.webp",
+    "static/media/jakHeader.webp": "/where-is-waldo/static/media/jakHeader.4d8f33115bdd1a2a74d3.webp",
+    "static/media/ratchetHeader.webp": "/where-is-waldo/static/media/ratchetHeader.f3f4c1b8ffd737ef3ed0.webp",
+    "static/media/kratosHeader.webp": "/where-is-waldo/static/media/kratosHeader.665a782a4da47583bfae.webp",
     "index.html": "/where-is-waldo/index.html",
-    "main.a5e2d4b5.css.map": "/where-is-waldo/static/css/main.a5e2d4b5.css.map",
-    "main.bc49a7a1.js.map": "/where-is-waldo/static/js/main.bc49a7a1.js.map"
+    "main.1d627415.css.map": "/where-is-waldo/static/css/main.1d627415.css.map",
+    "main.c9639490.js.map": "/where-is-waldo/static/js/main.c9639490.js.map"
   },
   "entrypoints": [
-    "static/css/main.a5e2d4b5.css",
-    "static/js/main.bc49a7a1.js"
+    "static/css/main.1d627415.css",
+    "static/js/main.c9639490.js"
   ]
 }
