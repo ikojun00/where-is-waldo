@@ -27,9 +27,7 @@ const Game = ({JakHeader, KratosHeader, RatchetHeader, PS2}) => {
               time: timerElement
             });
           }
-          setTimeout(() => {
-            setShouldRender(true);
-          }, 1000);
+          setShouldRender(true);
         }
       } catch (error) {
         console.log('Error adding document:', error);
