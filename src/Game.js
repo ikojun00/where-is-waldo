@@ -1,17 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Navigate } from 'react-router-dom';
 import Timer from './Timer';
-import PreloadImage from './PreloadImage';
-import image from './images/ps2Image.webp';
-import Jak from './images/jakHeader.webp';
-import Kratos from './images/kratosHeader.webp';
-import Ratchet from './images/ratchetHeader.webp';
 import { db } from './firebase';
 import { collection, getDocs, addDoc } from "firebase/firestore";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Game = () => {
+const Game = ({JakHeader, KratosHeader, RatchetHeader, PS2}) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [originalDropdownPosition, setOriginalDropdownPosition] = useState({ x: -1, y: -1 });
   const [currentDropdownPosition, setCurrentDropdownPosition] = useState({ x: -1, y: -1 });
@@ -115,19 +110,19 @@ const Game = () => {
       <div className="header">
         <Timer />
         <div className='headerChar'>
-          <PreloadImage src={Jak} alt="Jak" />
+          <img src={JakHeader} alt="Jak" />
           <p>Jak</p>
         </div>
         <div className='headerChar'>
-          <PreloadImage src={Kratos} alt="Kratos" />
+          <img src={KratosHeader} alt="Kratos" />
           <p>Kratos</p>
         </div>
         <div className='headerChar'>
-          <PreloadImage src={Ratchet} alt="Ratchet" />
+          <img src={RatchetHeader} alt="Ratchet" />
           <p>Ratchet</p>
         </div>
       </div>
-      <img ref={imageRef} src={image} alt="PS2" onClick={handleClick} />
+      <img ref={imageRef} src={PS2} alt="PS2" onClick={handleClick} />
       {showDropdown && (
         <div className="dropdown-menu" style={{ top: currentDropdownPosition.y, left: currentDropdownPosition.x }}>
           <ul>

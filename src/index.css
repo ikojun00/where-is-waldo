@@ -11,7 +11,14 @@ body {
 } 
 
 img {
-  width: 100vw;
+  max-width: 100vw;
+}
+
+.spinner {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 button {
@@ -149,6 +156,7 @@ ul {
 @media only screen and (max-width: 768px) {
   .homePageImages > .homePageChar > img {
     height: 20vh;
+    width: auto;
   }
   
   .header > .headerChar {
