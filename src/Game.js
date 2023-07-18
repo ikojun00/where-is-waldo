@@ -21,7 +21,7 @@ const Game = ({JakHeader, KratosHeader, RatchetHeader, PS2}) => {
           const timerElement = document.querySelector(".timer").textContent;
           const player = prompt(`Your time is ${timerElement}. Your name is: `)
 
-          if (timerElement) {
+          if (timerElement && player !== null) {
             await addDoc(collection(db, "leaderboard"), {
               name: player,
               time: timerElement
