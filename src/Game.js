@@ -122,7 +122,8 @@ const Game = ({JakHeader, KratosHeader, RatchetHeader, PS2}) => {
       </div>
       <img ref={imageRef} src={PS2} alt="PS2" onClick={handleClick} />
       {showDropdown && (
-        <div className="dropdown-menu" style={{ top: currentDropdownPosition.y, left: currentDropdownPosition.x }}>
+        <div className="dropdown-menu" style={{ top: currentDropdownPosition.y, 
+        left: originalDropdownPosition.x < 3000 ? currentDropdownPosition.x : currentDropdownPosition.x - 100 }}>
           <ul>
             {firestoreData.map((item, index) => (
               <li key={index} className="options" onClick={() => handleOptionSelect(item.name)}>
