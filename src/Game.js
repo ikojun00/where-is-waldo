@@ -6,7 +6,8 @@ import { collection, getDocs, addDoc } from "firebase/firestore";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const Game = ({JakHeader, KratosHeader, RatchetHeader, PS2}) => {
+const Game = ({JakHeader, KratosHeader, RatchetHeader, 
+  PS2_325w, PS2_375w, PS2_425w, PS2_768w, PS2_1024w, PS2_1440w}) => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [originalDropdownPosition, setOriginalDropdownPosition] = useState({ x: -1, y: -1 });
   const [currentDropdownPosition, setCurrentDropdownPosition] = useState({ x: -1, y: -1 });
@@ -51,10 +52,10 @@ const Game = ({JakHeader, KratosHeader, RatchetHeader, PS2}) => {
   }, []);
 
   const handleClick = (event) => {
-    console.log(firestoreData)
+    console.log(imageRef)
     const imageBounds = imageRef.current.getBoundingClientRect();
-    const originalWidth = imageRef.current.naturalWidth;
-    const originalHeight = imageRef.current.naturalHeight;
+    const originalWidth = 4320;
+    const originalHeight = 9360;
 
     // Calculate the current dimensions of the image
     const currentWidth = imageBounds.width;
@@ -120,7 +121,9 @@ const Game = ({JakHeader, KratosHeader, RatchetHeader, PS2}) => {
           <p>Ratchet</p>
         </div>
       </div>
-      <img ref={imageRef} src={PS2} alt="PS2" onClick={handleClick} />
+      <img ref={imageRef} srcSet={`${PS2_325w} 325w, ${PS2_375w} 375w, ${PS2_425w} 425w, 
+      ${PS2_768w} 768w, ${PS2_1024w} 1024w, ${PS2_1440w} 1440w`} src={PS2_1440w}
+      alt="PS2" onClick={handleClick} />
       {showDropdown && (
         <div className="dropdown-menu" style={{ top: currentDropdownPosition.y, 
         left: originalDropdownPosition.x < 3000 ? currentDropdownPosition.x : currentDropdownPosition.x - 100 }}>

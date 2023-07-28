@@ -9,13 +9,19 @@ import Ratchet from './images/ratchet.webp';
 import JakHeader from './images/jakHeader.webp';
 import KratosHeader from './images/kratosHeader.webp';
 import RatchetHeader from './images/ratchetHeader.webp';
-import PS2 from './images/ps2Image.webp';
+import PS2_325w from './images/ps2Image_325.webp';
+import PS2_375w from './images/ps2Image_375.webp';
+import PS2_425w from './images/ps2Image_425.webp'
+import PS2_768w from './images/ps2Image_768.webp'
+import PS2_1024w from './images/ps2Image_1024.webp'
+import PS2_1440w from './images/ps2Image_1440.webp'
 import { BarLoader } from "react-spinners";
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    const imgs = [Jak, Kratos, Ratchet, JakHeader, KratosHeader, RatchetHeader, PS2];
+    const imgs = [Jak, Kratos, Ratchet, JakHeader, KratosHeader, RatchetHeader, 
+    PS2_325w, PS2_375w, PS2_425w, PS2_768w, PS2_1024w, PS2_1440w];
     cacheImages(imgs)
   }, []);
 
@@ -44,7 +50,8 @@ const App = () => {
       <Fragment>
       <Routes>
         <Route path="/" element={<HomePage Jak={Jak} Kratos={Kratos} Ratchet={Ratchet}/>} />
-        <Route path="/game" element={<Game JakHeader={JakHeader} KratosHeader={KratosHeader} RatchetHeader={RatchetHeader} PS2={PS2}/>} />
+        <Route path="/game" element={<Game JakHeader={JakHeader} KratosHeader={KratosHeader} RatchetHeader={RatchetHeader} 
+        PS2_325w={PS2_325w} PS2_375w={PS2_375w} PS2_425w={PS2_425w} PS2_768w={PS2_768w} PS2_1024w={PS2_1024w} PS2_1440w={PS2_1440w}/>} />
         <Route path="/leaderboard" element={<Leaderboard />} />
       </Routes>
       </Fragment>}
