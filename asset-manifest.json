@@ -1,20 +1,25 @@
 {
   "files": {
     "main.css": "/where-is-waldo/static/css/main.77bbe3b8.css",
-    "main.js": "/where-is-waldo/static/js/main.19493528.js",
-    "static/media/ps2Image.webp": "/where-is-waldo/static/media/ps2Image.3952170480e9b015c524.webp",
+    "main.js": "/where-is-waldo/static/js/main.e080a8e4.js",
+    "static/media/ps2Image_1440.webp": "/where-is-waldo/static/media/ps2Image_1440.ac424007e045b42ebc3f.webp",
+    "static/media/ps2Image_1024.webp": "/where-is-waldo/static/media/ps2Image_1024.87f7b909e25f4ca1e740.webp",
+    "static/media/ps2Image_768.webp": "/where-is-waldo/static/media/ps2Image_768.483e8fdc6a87f3ecc0f2.webp",
     "static/media/kratos.webp": "/where-is-waldo/static/media/kratos.0c41c64375d3865dc665.webp",
+    "static/media/ps2Image_425.webp": "/where-is-waldo/static/media/ps2Image_425.66aa2c48ff2a683b35be.webp",
     "static/media/jak.webp": "/where-is-waldo/static/media/jak.1a7c46e5ae7da4cf5954.webp",
     "static/media/ratchet.webp": "/where-is-waldo/static/media/ratchet.4eedeed47acaba2698cc.webp",
+    "static/media/ps2Image_375.webp": "/where-is-waldo/static/media/ps2Image_375.7bee2d53ec2339431e8a.webp",
+    "static/media/ps2Image_325.webp": "/where-is-waldo/static/media/ps2Image_325.3eb13b3def40026c50b2.webp",
     "static/media/jakHeader.webp": "/where-is-waldo/static/media/jakHeader.4d8f33115bdd1a2a74d3.webp",
     "static/media/ratchetHeader.webp": "/where-is-waldo/static/media/ratchetHeader.f3f4c1b8ffd737ef3ed0.webp",
     "static/media/kratosHeader.webp": "/where-is-waldo/static/media/kratosHeader.665a782a4da47583bfae.webp",
     "index.html": "/where-is-waldo/index.html",
     "main.77bbe3b8.css.map": "/where-is-waldo/static/css/main.77bbe3b8.css.map",
-    "main.19493528.js.map": "/where-is-waldo/static/js/main.19493528.js.map"
+    "main.e080a8e4.js.map": "/where-is-waldo/static/js/main.e080a8e4.js.map"
   },
   "entrypoints": [
     "static/css/main.77bbe3b8.css",
-    "static/js/main.19493528.js"
+    "static/js/main.e080a8e4.js"
   ]
 }
